@@ -89,6 +89,8 @@ pub struct Theme {
     pub is_high_contrast: bool,
     /// cosmic-comp window gaps size (outer, inner)
     pub gaps: (u32, u32),
+    /// cosmic-comp smart window gaps
+    pub is_smart_gaps: bool,
     /// cosmic-comp active hint window outline width
     pub active_hint: u32,
     /// cosmic-comp custom window hint color
@@ -595,6 +597,8 @@ pub struct ThemeBuilder {
     pub is_frosted: bool, // TODO handle
     /// cosmic-comp window gaps size (outer, inner)
     pub gaps: (u32, u32),
+    /// cosmic-comp smart window gaps
+    pub is_smart_gaps: bool,
     /// cosmic-comp active hint window outline width
     pub active_hint: u32,
     /// cosmic-comp custom window hint color
@@ -619,6 +623,7 @@ impl Default for ThemeBuilder {
             is_frosted: false,
             // cosmic-comp theme settings
             gaps: (0, 8),
+            is_smart_gaps: false,
             active_hint: 3,
             window_hint: None,
         }
@@ -745,6 +750,7 @@ impl ThemeBuilder {
             warning,
             destructive,
             gaps,
+            is_smart_gaps,
             active_hint,
             window_hint,
             is_frosted,
@@ -1093,6 +1099,7 @@ impl ThemeBuilder {
             is_dark,
             is_high_contrast,
             gaps,
+            is_smart_gaps,
             active_hint,
             window_hint,
             is_frosted,
